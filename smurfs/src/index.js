@@ -7,16 +7,15 @@ import logger from 'redux-logger';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
+import rootReducer from './reducers';
 
 const store = createStore(
+  rootReducer,
   composeWithDevTools(
     applyMiddleware(
       thunk,
       logger
-    ),
-    window.__REDUX_DEVTOOLS_EXTENSION__ ?
-    window.__REDUX_DEVTOOLS_EXTENSION__() :
-    f => f
+    )
   )
 );
 
