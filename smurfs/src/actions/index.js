@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const GET_SMURFS_START = 'GET_SMURFS_SUCCESS';
-export const GET_SMURFS_SUCCESS = 'GET_SMURFS_FAILURE';
+export const GET_SMURFS_SUCCESS = 'GET_SMURFS_SUCCESS';
 export const GET_SMURFS_FAILURE = 'GET_SMURFS_FAILURE';
 
 export const ADD_SMURF_START = 'ADD_SMURF_START';

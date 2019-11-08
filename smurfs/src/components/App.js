@@ -1,27 +1,31 @@
-import React, { Component } from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
 import { getSmurfs } from '../actions';
 import { connect } from 'react-redux';
 import SmurfForm from './SmurfForm';
 import SmurfList from './SmurfList';
 
-class App extends Component {
+const App = (props) => {
 
-  componentDidMount() {
-    this.props.getSmurfs();
-  }
+  useEffect(() => {
+    props.getSmurfs()
+  }, []) // dependency array indicated by brackets... tells useEffect when to use its callback func... empty so it only runs once
 
-  render() {
+  // componentDidMount() {
+  //   this.props.getSmurfs();
+  // }
+
+  // render() {
     return (
       <div className="App">
         <div className="Smurfs">
-          <SmurfList smurfs={ this.props.smurfs } />
+          <SmurfList smurfs={ props.smurfs } />
           <SmurfForm />
         </div>
       </div>
     );
   }
-}
+
 const mapStateToProps = state => {
   return {
     smurfs: state.smurfs,

@@ -8,8 +8,8 @@ const Smurfs = props => {
                 <div id={smurf.id} key={smurf.id}>
                     <span>
                         <h3>{smurf.name}</h3>
-                        <strong>{smurf.age}cm tall</strong>
-                        <strong>{smurf.height} smurf years old</strong>
+                        <strong>{smurf.age} smurf years old</strong>
+                        <strong>{smurf.height} cm tall</strong>
                     </span>
                 </div>
             ))}
